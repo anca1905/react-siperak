@@ -3,7 +3,7 @@ import problems from "../../data/problems";
 
 function ProblemSection() {
     return (
-        <section className="bg-slate-50 py-20 overflow-hidden">
+        <section id="masalah" className="bg-slate-50 py-20 overflow-hidden">
             <div className="mx-auto max-w-6xl px-6">
                 <h2
                     data-aos="fade-up"
@@ -17,7 +17,7 @@ function ProblemSection() {
                         <div
                             key={index}
                             data-aos="fade-up"
-                            data-aos-delay={index * 100} // Delay bertahap: 0ms, 100ms, 200ms...
+                            data-aos-delay={index * 100}
                         >
                             <ProblemCard
                                 icon={problem.icon}

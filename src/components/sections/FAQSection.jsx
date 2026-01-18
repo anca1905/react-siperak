@@ -29,7 +29,7 @@ export default function FAQSection() {
                         <div
                             key={index}
                             className={`border rounded-lg transition-all duration-300 ${openIndex === index
-                                    ? 'border-red-200 bg-red-50/50 shadow-sm'
+                                    ? 'border-blue-200 bg-blue-50/50 shadow-sm'
                                     : 'border-slate-200 hover:border-slate-300'
                                 }`}
                         >
@@ -37,7 +37,7 @@ export default function FAQSection() {
                                 onClick={() => toggleFAQ(index)}
                                 className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
                             >
-                                <span className={`font-semibold transition-colors ${openIndex === index ? 'text-red-700' : 'text-slate-800'
+                                <span className={`font-semibold transition-colors ${openIndex === index ? 'text-blue-700' : 'text-slate-800'
                                     }`}>
                                     {faq.question}
                                 </span>
@@ -49,7 +49,7 @@ export default function FAQSection() {
                                     viewBox="0 0 24 24"
                                     strokeWidth={2}
                                     stroke="currentColor"
-                                    className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-red-500' : ''
+                                    className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-blue-500' : ''
                                         }`}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />

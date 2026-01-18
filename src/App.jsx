@@ -17,8 +17,8 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   useEffect(() => {
     AOS.init({
-      once: true, 
-      duration: 800, 
+      once: true,
+      duration: 800,
       easing: 'ease-out-cubic',
     });
   }, []);
@@ -41,7 +41,7 @@ function App() {
         <FAQSection />
         <CTASection onClick={() => setIsModalOpen(true)} />
       </main>
-      <Footer />
+      <Footer onOpenModal={() => setIsModalOpen(true)} />
 
       {isModalOpen && (
         <DemoModal

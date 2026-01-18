@@ -21,7 +21,7 @@ export default function TestimonialSection() {
                     {testimonials.map((item) => (
                         <div
                             key={item.id}
-                            className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-red-500/50 transition-colors duration-300 relative group"
+                            className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-colors duration-300 relative group"
                         >
                             {/* Icon Kutip (Hiasan) */}
                             <div className="absolute top-6 right-8 text-slate-700 text-6xl font-serif opacity-50 group-hover:text-red-900/50 transition-colors">
@@ -36,7 +36,7 @@ export default function TestimonialSection() {
                             {/* Profil User */}
                             <div className="flex items-center gap-4">
                                 {/* Avatar Inisial */}
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center font-bold text-white text-lg shadow-lg">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-orange-600 flex items-center justify-center font-bold text-white text-lg shadow-lg">
                                     {item.avatar}
                                 </div>
 

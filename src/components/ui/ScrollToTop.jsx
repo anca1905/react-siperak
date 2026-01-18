@@ -34,8 +34,8 @@ export default function ScrollToTop() {
                 type="button"
                 onClick={scrollToTop}
                 className={`
-          p-3 rounded-full bg-red-600 text-white shadow-lg shadow-red-600/40 
-          transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 focus:outline-none
+          p-3 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/40 
+          transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 focus:outline-none
           ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}
         `}
             >

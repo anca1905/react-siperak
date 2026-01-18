@@ -3,7 +3,7 @@ import SolutionCard from "../SolutionCard";
 
 function SolutionSection() {
     return (
-        <section className="bg-slate-900 py-20 overflow-hidden">
+        <section id="solusi" className="bg-slate-900 py-20 overflow-hidden">
             <div className="mx-auto max-w-6xl px-6">
                 <h2 
                     data-aos="fade-up"
