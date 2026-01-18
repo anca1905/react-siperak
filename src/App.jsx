@@ -1,14 +1,27 @@
+import { useState, useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Navbar from './components/layout/Navbar'
 import Hero from './components/sections/Hero'
 import ProblemSection from './components/sections/ProblemSection'
 import SolutionSection from './components/sections/SolutionSection'
 import CTASection from './components/sections/CTASection'
+import PricingSection from './components/sections/PricingSection'
+import TestimonialSection from './components/sections/TestimonialSection'
+import FAQSection from './components/sections/FAQSection'
 import Footer from './components/layout/Footer'
 import DemoModal from './components/DemoModal'
-import { useState } from 'react'
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  useEffect(() => {
+    AOS.init({
+      once: true, 
+      duration: 800, 
+      easing: 'ease-out-cubic',
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -23,6 +36,9 @@ function App() {
         />
         <ProblemSection />
         <SolutionSection />
+        <PricingSection />
+        <TestimonialSection />
+        <FAQSection />
         <CTASection onClick={() => setIsModalOpen(true)} />
       </main>
       <Footer />
@@ -32,6 +48,7 @@ function App() {
           onClose={() => setIsModalOpen(false)}
         />
       )}
+      <ScrollToTop />
     </div>
   )
 }
