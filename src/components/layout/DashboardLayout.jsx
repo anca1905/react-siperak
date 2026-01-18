@@ -8,16 +8,13 @@ export default function DashboardLayout() {
 
     return (
         <div className="flex h-screen bg-slate-50 overflow-hidden">
-            {/* Sidebar */}
-            <Sidebar isOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+            <Sidebar isOpen={sidebarOpen} />
 
-            {/* Content Area */}
-            <div className="flex-1 flex flex-col overflow-hidden">
-                {/* Header */}
-                <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+            <div className="flex-1 flex flex-col h-full">
+                <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} isSidebarOpen={sidebarOpen} />
 
-                {/* Main Content (Halaman yang berubah-ubah) */}
-                <main className="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 p-6">
+                {/* Main Content Area */}
+                <main className={`flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 p-6 pt-24 transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-20'}`}>
                     <Outlet />
                 </main>
             </div>

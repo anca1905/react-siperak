@@ -1,56 +1,34 @@
-import { useState, useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import Navbar from './components/layout/Navbar'
-import Hero from './components/sections/Hero'
-import ProblemSection from './components/sections/ProblemSection'
-import SolutionSection from './components/sections/SolutionSection'
-import CTASection from './components/sections/CTASection'
-import PricingSection from './components/sections/PricingSection'
-import TestimonialSection from './components/sections/TestimonialSection'
-import FAQSection from './components/sections/FAQSection'
-import Footer from './components/layout/Footer'
-import DemoModal from './components/DemoModal'
-import ScrollToTop from './components/ui/ScrollToTop';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import DashboardLayout from './components/layout/DashboardLayout';
+import DashboardHome from './pages/dashboard/DashboardHome';
+import CashierPOS from './pages/dashboard/CashierPOS';
+import Employees from './pages/dashboard/Employees';
+import Stock from './pages/dashboard/Stock';
+import Reports from './pages/dashboard/Reports';
+import Settings from './pages/dashboard/Settings';
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      duration: 800,
-      easing: 'ease-out-cubic',
-    });
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar onOpenModal={() => setIsModalOpen(true)} />
+    <Router>
+      <Routes>
+        {/* Route Publik (Landing Page) */}
+        <Route path="/" element={<LandingPage />} />
 
-      <main>
-        <Hero onOpenModal={() => setIsModalOpen(true)}
-          badge="Untuk Cafe, Billiard & Retail"
-          title="Amankan Omzet Bisnis Anda."
-          highlight="Tutup Celah Kebocoran Kas."
-          description="Sistem kasir dan operasional yang dirancang khusus untuk owner yang tidak bisa 24 jam di lokasi."
-        />
-        <ProblemSection />
-        <SolutionSection />
-        <PricingSection />
-        <TestimonialSection />
-        <FAQSection />
-        <CTASection onClick={() => setIsModalOpen(true)} />
-      </main>
-      <Footer onOpenModal={() => setIsModalOpen(true)} />
+        {/* Route Private (Dashboard) */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          {/* Halaman Utama Dashboard */}
+          <Route index element={<DashboardHome />} />
+          <Route path="kasir" element={<CashierPOS />} />
+          <Route path="pegawai" element={<Employees />} />
+          <Route path="stok" element={<Stock />} />
+          <Route path="laporan" element={<Reports />} />
+          <Route path="pengaturan" element={<Settings />} />
+        </Route>
 
-      {isModalOpen && (
-        <DemoModal
-          onClose={() => setIsModalOpen(false)}
-        />
-      )}
-      <ScrollToTop />
-    </div>
-  )
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,14 +1,12 @@
 import { Menu, Bell, User } from 'lucide-react';
 
-export default function Header({ toggleSidebar }) {
+export default function Header({ toggleSidebar, isSidebarOpen }) {
     return (
-        <header className="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-6 shadow-sm">
-            {/* Left: Toggle Button */}
-            <button onClick={toggleSidebar} className="text-slate-500 hover:text-slate-700 focus:outline-none">
+        <header className={`bg-white border-b border-slate-200 h-16 flex items-center justify-between px-6 shadow-sm fixed top-0 right-0 z-20 transition-all duration-300 ${isSidebarOpen ? 'left-64' : 'left-20'}`}>
+            <button onClick={toggleSidebar} className="text-slate-500 hover:text-slate-700 focus:outline-none p-2 rounded-md hover:bg-slate-100">
                 <Menu size={24} />
             </button>
 
-            {/* Right: User Profile & Notif */}
             <div className="flex items-center gap-6">
                 <button className="relative text-slate-500 hover:text-blue-600 transition-colors">
                     <Bell size={20} />
