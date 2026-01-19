@@ -11,7 +11,7 @@ export default function Categories() {
     const getCategories = async () => {
         try {
             const token = localStorage.getItem("accessToken");
-            const response = await axios.get("http://localhost:5000/categories", {
+            const response = await axios.get("https://alecia-decem-matha.ngrok-free.dev/categories", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setCategories(response.data);
