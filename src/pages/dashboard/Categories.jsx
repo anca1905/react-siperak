@@ -14,7 +14,7 @@ export default function Categories() {
             const response = await axios.get("https://alecia-decem-matha.ngrok-free.dev/categories", {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            setCategories(response.data);
+            setCategories(response.data.data);
         } catch (error) {
             console.error(error);
         } finally {
